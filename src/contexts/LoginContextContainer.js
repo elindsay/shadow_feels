@@ -16,6 +16,7 @@ const LoginContextContainer = (props) => {
       const result = await api.loginUser({ email, password });
       if(result.data.access_token) {
         setAccessToken(result.data.access_token);
+        setErrors(undefined);
         await fetchCurrentUser();
       } else {
         setErrors("There was a problem with login");
@@ -39,6 +40,10 @@ const LoginContextContainer = (props) => {
     setAccessToken(undefined);
   }
 
+  const clearErrors = () => {
+    setErrors(undefined);
+  }
+
   setInterceptors(logoutUser);
 
   return (
@@ -46,6 +51,7 @@ const LoginContextContainer = (props) => {
       value={{
         user: user,
         errors: errors,
+        clearErrors: clearErrors,
         login: loginUser,
         logout: logoutUser
       }}
