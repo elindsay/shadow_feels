@@ -1,8 +1,19 @@
 $body-bg: #1a1a1a;
-$body-color: #EEE;
 $primary: #b366ff;
+$secondary: #ff99b9;
 $dark: #333;
-$danger: red;
+$light: #EEE;
 
 @import '~bootstrap/scss/bootstrap';
+
+.text-black {
+  color: black !important;
+}
+a.text-black {
+  color: black !important;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 

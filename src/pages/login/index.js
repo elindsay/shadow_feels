@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Container from 'react-bootstrap/Container';
+import Layout from 'layout';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -19,74 +19,77 @@ const Login = (props) => {
   }
 
   return (
-    <LoginContext.Consumer>
-      {loginContext => (
-  <Container>
-    <Row className="justify-content-sm-center">
-      <Col>
-        <Row>
-      <Col md="2" lg="3">
-        &nbsp;
-      </Col>
-      <Col md="8" lg="6" className="pl-0 pr-0 mt-3">
-          { loginContext.errors && (
-            <Alert 
-              variant="danger" 
-              onClose={() => loginContext.clearErrors()}
-              dismissible
-            > { loginContext.errors } </Alert>
-          )}
-      </Col>
-      <Col className="d-none d-md-block" md="2" lg="3">
-        &nbsp;
-      </Col>
-    </Row>
-  <Row>
-    <Col className="d-none d-md-block" md="2" lg="3">
-      &nbsp;
-    </Col>
-    <Col md="8" lg="6" className="bg-dark rounded px-3 py-2">
-        <Row>
-          <Col>
-            <h2 className="mt-2 mb-4">Login Form</h2>
+    <Layout>
+      <LoginContext.Consumer>
+        {loginContext => (
+          <Row className="justify-content-sm-center mt-3">
+            <Col>
+              <Row>
+                <Col xs="1" md="2" lg="3">
+                  &nbsp;
+                </Col>
+                <Col xs="10" md="8" lg="6" className="pl-0 pr-0 mt-3">
+                    { loginContext.errors && (
+                      <Alert 
+                        variant="danger" 
+                        onClose={() => loginContext.clearErrors()}
+                        dismissible
+                      > { loginContext.errors } </Alert>
+                    )}
+                 </Col>
+                 <Col xs="1" md="2" lg="3">
+                   &nbsp;
+                 </Col>
+              </Row>
+              <Row>
+                <Col xs="1" md="2" lg="3">
+                  &nbsp;
+                </Col>
+                <Col xs="10" md="8" lg="6" 
+                  className="bg-dark text-light rounded px-3 py-2"
+                >
+                  <Row>
+                    <Col>
+                      <h2 className="mt-2 mb-4">Login Form</h2>
+                    </Col>
+                  </Row>
+                  <Form>
+                    <Form.Group controlId="loginEmail">
+                      <Form.Control
+                        type="email" 
+                        placeholder="Email" 
+                        name="email"
+                        onChange={handleInputChange}
+                      />
+                    </Form.Group>
+                    <Form.Group controlId="loginPassword">
+                      <Form.Control 
+                        type="password" 
+                        placeholder="Password" 
+                        name="password"
+                        onChange={handleInputChange}
+                      />
+                    </Form.Group>
+                    <Form.Group controlId="loginButton">
+                      <Button 
+                        variant="primary"
+                        className="text-dark"
+                        onClick={handleLogin(loginContext)}
+                      >
+                        Login
+                      </Button>
+                    </Form.Group>
+                  </Form> 
+                </Col>
+                <Col xs="1" md="2" lg="3">
+                  &nbsp;
+                </Col>
+              </Row>
             </Col>
-        </Row>
-          <Form>
-            <Form.Group controlId="loginEmail">
-              <Form.Control
-                type="email" 
-                placeholder="Email" 
-                name="email"
-                onChange={handleInputChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="loginPassword">
-              <Form.Control 
-                type="password" 
-                placeholder="Password" 
-                name="password"
-                onChange={handleInputChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="loginButton">
-              <Button 
-                variant="primary"
-                onClick={handleLogin(loginContext)}
-              >
-                  Login
-              </Button>
-            </Form.Group>
-          </Form> 
-    </Col>
-    <Col className="d-none d-md-block" md="2" lg="3">
-      &nbsp;
-    </Col>
-  </Row>
-    </Col>
-      </Row>
-        </Container>
-      )}
-    </LoginContext.Consumer>
+          </Row>
+        )}
+      </LoginContext.Consumer>
+    </Layout>
   )
 }
 
