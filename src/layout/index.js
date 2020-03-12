@@ -4,15 +4,15 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavItem from 'react-bootstrap/NavItem';
 import Container from 'react-bootstrap/Container';
-import CatLogo from 'assets/mystic-cat-resized.svg';
+import CatLogo from 'assets/mystic-cat-green.svg';
 import PsychedelicBackground from 'assets/psychedelic-background.jpg'
 
 const Layout = ({splash, children}) => {
   return (
     <div>
-     <Navbar bg="primary">
+     <Navbar bg="black" className="text-primary">
        <Link to="/">
-        <Navbar.Brand className="py-0 logo-text">
+        <Navbar.Brand className="py-0 logo-text text-primary">
             <img
               src={CatLogo}
               height="60"
@@ -23,20 +23,20 @@ const Layout = ({splash, children}) => {
         </Navbar.Brand>
       </Link>
       <Nav className="ml-auto mr-3">
-        <Link className="text-black mr-2" to="login" >
-          <NavItem className="text-black">Journal</NavItem>
+        <Link className="text-primary mr-2" to="login" >
+          <NavItem className="text-primary">Journal</NavItem>
         </Link>
         <Link className="text-black mr-2" to="login" >
-          <NavItem className="text-black">Blog</NavItem>
+          <NavItem className="text-primary">Blog</NavItem>
         </Link>
         <Link className="text-black mr-2" to="login" >
-          <NavItem className="text-black">Resources</NavItem>
+          <NavItem className="text-primary">Resources</NavItem>
         </Link>
         <Link className="text-black mr-2" to="login" >
-          <NavItem className="text-black">About</NavItem>
+          <NavItem className="text-primary">About</NavItem>
         </Link>
         <Link className="text-black" to="login" >
-          <NavItem className="text-black">Login</NavItem>
+          <NavItem className="text-primary">Login</NavItem>
         </Link>
       </Nav>
       </Navbar>
