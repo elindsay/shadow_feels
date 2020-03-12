@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import { LoginContext } from 'contexts/LoginContextContainer.js';
 import PinkGirl from 'assets/pink-girl.png'
 import PsychedelicBackground from 'assets/psychedelic-background.jpg'
+import MysticCatPurple from 'assets/mystic-cat-purple.svg'
 
 const Splash = () => {
 
@@ -25,7 +26,7 @@ const Splash = () => {
             </Col>
           </Row>
           <Row className="mt-5">
-            <Col className="text-secondary text-center">
+            <Col className="text-secondary text-center mt-5">
               <h1 className="font-weight-light mystery">Journaling</h1>
             </Col>
           </Row>
