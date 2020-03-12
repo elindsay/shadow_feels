@@ -5,6 +5,9 @@ $dark: #333;
 $light: #EEE;
 
 @import '~bootstrap/scss/bootstrap';
+body {
+  font-family: 'Raleway', sans-serif;
+}
 
 .text-black {
   color: black !important;
@@ -16,4 +19,105 @@ a.text-black {
   }
 }
 
+.mystery {
+  font-family: "Mystery Quest", cursive;
+}
+.logo-text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+}
 
+.hidden {
+  display: none;
+}
+
+//Splash for various screen sizes, starting with xs
+.splash {
+  background-size: cover;
+  background-position: top center;
+  height: 250px;
+  margin-bottom: -250px;
+}
+.splash-overlay {
+  height: 250px;
+  margin-top: -250px;
+  margin-bottom: -250px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.splash-text {
+  margin-top: 100px !important;
+}
+
+
+@include media-breakpoint-up(sm) {
+  .splash {
+    height: 275px;
+    margin-bottom: -275px;
+  }
+  .splash-overlay {
+    height: 275px;
+    margin-top: -275px;
+    margin-bottom: -275px;
+  }
+  .splash-text {
+    margin-top: 100px !important;
+  }
+}
+@include media-breakpoint-up(md) {
+  .splash {
+    height: 350px;
+    margin-bottom: -350px;
+  }
+  .splash-overlay {
+    height: 350px;
+    margin-top: -350px;
+    margin-bottom: -350px;
+  }
+  .splash-text {
+    margin-top: 100px !important;
+    h2 {
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .splash {
+    height: 500px;
+    margin-bottom: -500px;
+  }
+  .splash-overlay {
+    height: 500px;
+    margin-top: -500px;
+    margin-bottom: -500px;
+  }
+  .splash-text {
+    margin-top: 200px !important;
+  }
+}
+@include media-breakpoint-up(xl) {
+  .splash {
+    height: 600px;
+    margin-bottom: -600px;
+  }
+  .splash-overlay {
+    height: 600px;
+    margin-top: -600px;
+    margin-bottom: -600px;
+  }
+  .splash-text {
+    margin-top: 250px !important;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .splash-text {
+    h2 {
+      font-size: 30px;
+    }
+  }
+}
+@include media-breakpoint-down(xs) {
+  .splash-text {
+    h2 {
+      font-size: 22px;
+    }
+  }
+}

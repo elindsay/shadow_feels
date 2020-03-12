@@ -4,17 +4,18 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavItem from 'react-bootstrap/NavItem';
 import Container from 'react-bootstrap/Container';
-import CatLogo from 'assets/cat-logo-black.svg';
+import CatLogo from 'assets/mystic-cat-resized.svg';
+import PsychedelicBackground from 'assets/psychedelic-background.jpg'
 
-const Layout = ({children}) => {
+const Layout = ({splash, children}) => {
   return (
     <div>
      <Navbar bg="primary">
        <Link to="/">
-        <Navbar.Brand className="py-0">
+        <Navbar.Brand className="py-0 logo-text">
             <img
               src={CatLogo}
-              height="40"
+              height="60"
               className="d-inline-block mr-2 my-0 p-0"
               alt="Shadow Feel Logo"
             />
@@ -39,9 +40,16 @@ const Layout = ({children}) => {
         </Link>
       </Nav>
       </Navbar>
-        <Container>
-      { children }
-        </Container>
+      <div className={splash ? "splash" : "hidden"} style={{backgroundImage: `url(${PsychedelicBackground})`}}>
+        &nbsp;
+      </div>
+      <div className={splash ? "splash-overlay" : "hidden"} >
+        &nbsp;
+      </div>
+      
+      <Container>
+        { children }
+      </Container>
     </div>
   )
 }
