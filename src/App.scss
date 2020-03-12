@@ -35,17 +35,23 @@ a.text-black {
 .splash {
   background-size: cover;
   background-position: top center;
-  height: 250px;
-  margin-bottom: -250px;
+  height: 400px;
+  margin-bottom: -400px;
 }
 .splash-overlay {
-  height: 250px;
-  margin-top: -250px;
-  margin-bottom: -250px;
+  height: 400px;
+  margin-top: -400px;
+  margin-bottom: -400px;
   background-color: rgba(0, 0, 0, 0.7);
 }
+.splash-img {
+  img {
+    width: 100%;
+    margin: auto;
+  }
+}
 .splash-text {
-  margin-top: 100px !important;
+  margin-top: 20px !important;
 }
 
 
@@ -115,9 +121,14 @@ a.text-black {
   }
 }
 @include media-breakpoint-down(xs) {
+  .splash-img {
+    img {
+      width: 300px;
+    }
+  }
   .splash-text {
     h2 {
-      font-size: 22px;
+      font-size: 26px;
     }
   }
 }

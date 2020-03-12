@@ -15,13 +15,12 @@ const Splash = () => {
         splash={true}
       >
           <Row>
-            <Col className="text-secondary">
+            <Col className="splash-img text-center" xs="12" sm="6">
               <img
-                width="100%"
                 src={PinkGirl}
               />
             </Col>
-            <Col className="splash-text text-secondary text-center m-0">
+            <Col className="splash-text text-secondary text-center m-0" xs="12" sm="6">
                   <h2 className='d-inline font-weight-bold'>Finding light through difficult emotions</h2>
             </Col>
           </Row>
